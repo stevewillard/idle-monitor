@@ -1,0 +1,23 @@
+{
+    "name": "backbone.idleTimeout",
+    "version": "0.1.0",
+
+    "main": [
+        "*.js",
+        "bower.json"
+    ],
+
+    "ignore": [
+        "**/.*",
+        "*.md",
+        "AUTHORS.txt",
+        "Gruntfile.js",
+        "package.json"
+    ],
+
+    "dependencies": {
+        "backbone" : "1.1.2",
+        "jquery" : "2.1.1",
+        "lodash" : "2.4.1"
+    }
+}
