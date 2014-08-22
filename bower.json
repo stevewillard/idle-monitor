@@ -1,5 +1,5 @@
 {
-    "name": "idleMonitor",
+    "name": "idle-monitor",
     "version": "0.1.0",
     "keywords": ["idle", "monitor", "timeout", "backbone", "logout", "auto"],
 

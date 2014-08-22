@@ -1,7 +1,7 @@
 {
-    "name": "idleMonitor",
+    "name": "idle-monitor",
     "version": "0.1.0",
-    "repository" : "https://github.com/stevewillard/idleMonitor",
+    "repository" : "https://github.com/stevewillard/idle-monitor",
 
     "devDependencies": {
         "bower"                     : "1.3.9",
