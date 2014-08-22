@@ -66,8 +66,8 @@ A mapping of jQuery selectors and events which "reset" the idleness.
 
 _default:_
 ```json
-"events" : {
-    "document" : "click keyup"
+events : {
+    document : "click keyup"
 }
 ```
 ##### warningSecs
