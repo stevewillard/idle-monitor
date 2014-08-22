@@ -1,10 +1,12 @@
 {
-    "name": "backbone.idleTimeout",
+    "name": "idleMonitor",
     "version": "0.1.0",
+    "keywords": ["idle", "monitor", "timeout", "backbone", "logout", "auto"],
 
     "main": [
-        "*.js",
-        "bower.json"
+        "idleMonitor*",
+        "bower.json",
+        "LICENSE"
     ],
 
     "ignore": [
@@ -16,8 +18,6 @@
     ],
 
     "dependencies": {
-        "backbone" : "1.1.2",
-        "jquery" : "2.1.1",
-        "lodash" : "2.4.1"
+        "backbone" : "1.1.2"
     }
 }

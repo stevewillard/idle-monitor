@@ -3,9 +3,9 @@
         define(["backbone", "underscore"], factory);
     }
 }(function(Backbone, _) {
-    var LOCAL_STORAGE_KEY = "idleTimeout.actionTime";
+    var LOCAL_STORAGE_KEY = "IdleMonitor.actionTime";
 
-    function IdleTimeout(options) {
+    function IdleMonitor(options) {
         _.extend(this, Backbone.Events);
         this.timeout = null;
         this.lastAction = null;
@@ -27,13 +27,12 @@
         }, this));
     }
 
-    IdleTimeout.prototype.actionCallback = function() {
+    IdleMonitor.prototype.actionCallback = function() {
         localStorage.setItem(LOCAL_STORAGE_KEY, (new Date()).getTime());
         this.trigger("action");
     };
 
-    IdleTimeout.prototype.checkCallback = function() {
-        console.log("check callback");
+    IdleMonitor.prototype.checkCallback = function() {
         var lastActionUnixTime = parseInt(localStorage.getItem(LOCAL_STORAGE_KEY), 10),
             timeDiff = ((new Date()).getTime() - (new Date(lastActionUnixTime)).getTime()) / 1000;
 
@@ -58,14 +57,14 @@
         }
     };
 
-    IdleTimeout.prototype.start = function() {
+    IdleMonitor.prototype.start = function() {
         this.stop();
         this.actionCallback();
         this.timeout = setInterval(_.bind(this.checkCallback, this),
                 this.options.checkIntervalSecs * 1000);
     };
 
-    IdleTimeout.prototype.stop = function() {
+    IdleMonitor.prototype.stop = function() {
         if (this.timeout) {
             clearTimeout(this.timeout);
             this.timeout = null;
@@ -73,5 +72,5 @@
         this.warningFired = false;
     };
 
-    return IdleTimeout;
+    return IdleMonitor;
 }));
